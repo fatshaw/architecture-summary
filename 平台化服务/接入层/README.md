@@ -1,0 +1,11 @@
+## 接入
+1. 一个客户需要接入平台，需要申请权限，通常为每个客户产生AppID，AppKey，AppSecretkey。
+2. 用户在调用服务前通过AppKey+AppSecretKey获取access_token，refresh_token，access_token过期时间较短，通常为2小时，refresh_token过期时间较长，通常为30天。
+3. access_token，refresh_token可以使用jwt产生
+4. 使用access_token好处是可以记录来源，记录调用情况，进行控制
+5. 接口参数签名
+* 目标：防重放，防篡改，防拦截
+* 接口参数增加随机数nonce，时间错timestamp，将access_token+nonce+timestamp+url请求参数进行sha签名作为sign一起传给服务端
+* nonce+timestamp作用是为了防止重放，nonce+timestamp唯一标示一个请求，不能重复使用
+* sign的目标是避免url参数被篡改
+* 通过https防止数据被截获后看到数据内容

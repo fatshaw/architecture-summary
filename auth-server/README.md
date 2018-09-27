@@ -6,4 +6,7 @@
 4. 通过jwt生成token，token包含userid，过期时间等信息，返回客户端。
 5. 客户端通过token访问resource-server
 
+## jwt
+使用jwt生成token包含三部分：header，body，sign，sign是通过hmacsha256对body进行加密后产生的，避免body被修改。使用jwttoken的好处是token对应的信息可以自存储，不用在像传统的token管理使用redis
+
 ![认证图片](认证服务.jpg)
