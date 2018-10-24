@@ -4,11 +4,15 @@
 According to google paper: Overlapping Experiment Infrastructure  
 https://storage.googleapis.com/pub-tools-public-publication-data/pdf/36500.pdf
 
-## Traffic layer  
-incoming traffic is divided into two parts:   
-non-overlapping domain and overlapping layers
-  - non-overlapping domain: only one experiment can be hit  
-  - overlapping domain: at most one experiment can be hit in each layer
+## Traffic Partition  
+![traffic partition](traffic_partition.png)  
+Traffic can be splitted by two means
+- **vertically**: traffic is divided into different domain and each domain is independent  
+- **horizontally**: traffic is shared by different layers and each layer is independent. at most one experiment can be hit in each layer
+
+- **Nested layer** : layer can be nested inside the domain
+
+- **launch layer**: launch layer is a special layer which can receive all the traffic
 
 ## Model  
   - **layer experiment**
@@ -22,9 +26,11 @@ non-overlapping domain and overlapping layers
     private int type;           // cookie,url,random,etc.
     private String channel      // pc,web,ios,etc.
     private String callback;    // callback parameters given back to the caller
+    private int domainId
   ```
   - **domain**
   ```
+    private int id
     private String name
     private int percentage
   ```
@@ -50,3 +56,9 @@ layer A : a:20%  ,  b:20%  , c:60%
 layer B : aa:10% ,  bb:10% , cc:80%  
 ```
 the percentage of the requests hitting the experiment a in layer A is 20% and these requests should hit the experiments in the layer B evenly, which means requests hit a and aa should be 2% and requests hit a and bb should be 2% and requests hit a and cc should 16%
+
+
+## Reference
+- https://yq.aliyun.com/articles/5837
+- https://www.jianshu.com/p/de8d9f0b14f4
+- https://storage.googleapis.com/pub-tools-public-publication-data/pdf/36500.pdf
