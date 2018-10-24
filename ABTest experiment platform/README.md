@@ -5,14 +5,13 @@ According to google paper: Overlapping Experiment Infrastructure
 https://storage.googleapis.com/pub-tools-public-publication-data/pdf/36500.pdf
 
 ## Traffic Partition  
-![traffic partition](traffic_partition.png)  
-Traffic can be splitted by two means
-- **vertically**: traffic is divided into different domain and each domain is independent  
-- **horizontally**: traffic is shared by different layers and each layer is independent. at most one experiment can be hit in each layer
-
+![traffic partition](traffic.png)  
+traffic can be partitioned by the following way
+- **launch layer**: launch layer is a special layer which can receive all the traffic
+- **vertically**: traffic is divided into only one domain 
+- **horizontally**: traffic is shared by different layers inside one domain and each layer is independent. at most one experiment can be hit in each layer
 - **Nested layer** : layer can be nested inside the domain
 
-- **launch layer**: launch layer is a special layer which can receive all the traffic
 
 ## Model  
   - **layer experiment**
