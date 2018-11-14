@@ -13,3 +13,11 @@ ci：gitlab ci runner
 - ci/cd: gitlab ci，docker，k8s
 - git管理：dev开发，master pull request merge，发布时打tag
 - 环境：本地开发环境、k8s环境（开发环境，测试环境），staging环境，线上环境
+
+
+## scrum
+
+* Feature team  
+* Refinement->planning->review->retrospect  
+* DOD: definition of done  
+* Kanban: trello
