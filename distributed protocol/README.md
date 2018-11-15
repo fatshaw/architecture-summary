@@ -1,0 +1,14 @@
+- **2pc** 2 phrase commit protocal  
+  - prepare: coordinator send vote request to all the participants and every participant responses coordinator with 'Yes' or 'No'
+  - commit: coordinator send commit/abort to all participants according to the prepare phrase. 
+  - problem  
+    - no timeout check
+    - data is not consistent when coordinator and participant failed together and no other participants receive commit/abort request.
+- **3pc** 3 phrase commit protocal
+  - cancommit: vote
+  - precommit: prepare to commit with timeout check
+  - docommit: do commit or abort according to precommit phrase.
+  - advantage: 
+    - introduce timeout mechanism in precommit and commit phrase so that participants will not hold resource forever.
+    - in precommit when coordinator and participant failed together , other participant will abort due to timeout of waiting coordinator, so that it can resolve the problem of 2pc 
+  - disadvantage: in do commit phrase, when coordinator is down or network between coordinator and pariticipant is not connected then pariticipants will do commit even if it should do abort.
