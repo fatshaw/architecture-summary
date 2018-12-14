@@ -18,3 +18,5 @@
 - **backend-spec** backend development and release specification
 
 - **distributed protocal** 2pc and 3pc 
+
+- **oauth2** authentification server with oauth2 protocol. 
