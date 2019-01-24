@@ -17,6 +17,6 @@
 
 - **backend-spec** backend development and release specification
 
-- **distributed protocal** 2pc and 3pc 
+- **distributed transaction** 2pc, 3pc, Message table, TCC, etc.
 
 - **oauth2** authentification server with oauth2 protocol. 

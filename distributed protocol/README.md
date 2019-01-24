@@ -12,3 +12,18 @@
     - introduce timeout mechanism in precommit and commit phrase so that participants will not hold resource forever.
     - in precommit when coordinator and participant failed together , other participant will abort due to timeout of waiting coordinator, so that it can resolve the problem of 2pc 
   - disadvantage: in do commit phrase, when coordinator is down or network between coordinator and pariticipant is not connected then pariticipants will do commit even if it should do abort.
+
+- **Message Table** use message table to track transaction status. 
+    - Add message table
+    - make application business operation and message table record as a local DB transaction.
+    - execute a job to send unsent message to message queue, change message status = SENT.
+    - when message subscriber finished processing the message, change message status = DONE.
+    - cons. couple the message table with business application.
+
+- **transaction message queue** decouple message table with business application by transaction message queue.
+    - execute a local transaction, including business db operation and publishing message queue 
+    - when local transaction commit succeeds, commit message queue at the same time.
+    - when local transaction commit fails, cancel the message queue
+    - if commmit or cancel the message queue fails, message queue will callback the business application to check whether the local transaction succeeds or fails.
+    - pros. move message table from business application to transaction message queue.
+
