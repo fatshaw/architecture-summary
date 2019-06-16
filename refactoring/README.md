@@ -31,7 +31,8 @@
 
 **Moving Features**: 
 - MOVE FUNCTION
-    - 
+    - modularity
+    - related software elements are grouped
 
 
 ### Book
