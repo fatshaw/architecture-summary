@@ -9,3 +9,5 @@
 - **microservices pattern** patterns designed to solve problems in mircoservices architecture, such as distributed transaction, authorization and authentification, etc.
 
 - **async programming** async programming model. 
+
+- **refactoring** notes about refactoring
