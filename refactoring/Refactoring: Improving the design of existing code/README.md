@@ -33,7 +33,38 @@
 - MOVE FUNCTION
     - modularity
     - related software elements are grouped
+- MOVE STATEMENTS INTO FUNCTION
+    - Removing duplication
+- SLIDE STATEMENTS
+    - make it easy to understand code
+    - declare elements close to where I use them
+    - preprepare for another refactoring
+- Split Loop
+    - only do one thing
+    - followed by Extract Function or Slide statements
 
+**Simplifying Conditional Logic**
+- DECOMPOSE CONDITIONAL
+    - make intention clearer
+    - replace each chunk of code with a function call. `Extract Function`
+- CONSOLIDATE CONDITIONAL EXPRESSION
+- REPLACE NESTED CONDITIONAL WITH GUARD CLAUSES
+    - one leg is normal and the other indicates an unusual condition.
+    - much more clearer
+- REPLACE CONDITIONAL WITH POLYMORPHISM
+    - form a set of types with different logic
+
+**Refactoring APIs**
+- SEPARATE QUERY FROM MODIFIER
+    - Query no side effect
+- PARAMETERIZE FUNCTION
+    - remove the duplication by using a single function with parameters for the different values
+- REMOVE FLAG ARGUMENT
+    - Replace Parameter with Explicit Methods
+    - decompose different conditions
+- PRESERVE WHOLE OBJECT
+    - feature envy: Pulling several values from an object to do some logic on them alone
+    - 
 
 ### Book
 - Refactoring: improving the design of existing code
