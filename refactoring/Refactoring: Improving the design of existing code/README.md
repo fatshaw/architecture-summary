@@ -64,7 +64,7 @@
     - decompose different conditions
 - PRESERVE WHOLE OBJECT
     - feature envy: Pulling several values from an object to do some logic on them alone
-    - 
+- REPLACE FUNCTION WITH COMMAND
 
 ### Book
 - Refactoring: improving the design of existing code

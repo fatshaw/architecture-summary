@@ -32,3 +32,5 @@
     - if commmit or cancel the message queue fails, message queue will callback the business application to check whether the local transaction succeeds or fails.
     - pros. move message table from business application to transaction message queue.
     - in some cases, downstream system should implement try|confirm|cancel interface, since message consumer cannot make sure process must be succeed, if failed, it should call cancel interface of upstream system to revert the transaction.
+
+- **Distributed Transaction middleware** seata, txlcn
