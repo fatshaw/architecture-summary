@@ -42,3 +42,6 @@
     - check idempotency-key existency. if exist: return the result saved and HTTP CODE: 409.
     - execute the pre-idempotent operation
     - execute the idempotent operation and save the result with the idempotency-key inside one transaction.
+- Distributed transaction idempotency:
+    -  downstream services need provide idempotent interface.
+- Retry: only when service return specific error to notify client do not retry, otherwise client always need retry.
