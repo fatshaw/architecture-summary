@@ -30,7 +30,7 @@ sharding: sharding-sphere
 
 redisproxy：阿里云
 
-版本管理：gradle 4
+版本管理：gradle 6
 
 base项目：com.ytx.futures:base : http://gitlab.yintech.net/ytx/java-backend/futures/commons，version:1.2.1-SNAPSHOT
 
@@ -55,7 +55,7 @@ JPA：spring-data-jpa
 - 贫血模型：
   - controller->service->dao
   - service层进行事务管理
-- 充血模型（ddd optional）：
+- 充血模型（ddd optional）:
   - Application,domain,infrastructure,interface
   - infrastructure中包含dao和repository层。dao负责单表的数据库处理，repository负责模型的数据库操作
   - repository层进行事务管理

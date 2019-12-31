@@ -44,4 +44,17 @@
     - execute the idempotent operation and save the result with the idempotency-key inside one transaction.
 - Distributed transaction idempotency:
     -  downstream services need provide idempotent interface.
-- Retry: only when service return specific error to notify client do not retry, otherwise client always need retry.
+
+
+
+### Retry
+- Error Design
+    - Retryable error
+        - Network Timeout
+        - Rate Limiting
+        - Service Unavailable
+    - Unretryable error
+        - Business Error(No Auth, No Money, Etc.)
+- Retry: only when service return Unretryable error to notify client do not retry, otherwise client always need retry.
+- Exponential Backoff: avoid overwhelm the downstream system.
+- Downstream system ensure idempotency.
