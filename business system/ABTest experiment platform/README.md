@@ -42,14 +42,14 @@ traffic can be partitioned by the following way
     3. random  
 
   - **request distribution**  
-  if f(cookie) % 1000 = m is less than domain percentage, then the request hits domain experiment, otherwise the request hits layer experiments.  
+  if we split overall traffic into 100 and if f(cookie) % 100 = m is less than domain percentage, then the request hits domain experiment, otherwise the request hits layer experiments.  
   non-overlapping experiment can also be considered as a special type of overlapping layer experiments, e.g, layer=non-overlapping  
   
   - **hash function**  
-  f(cookie,layer L) % 1000 = m if m falls into the scope of experiment A in layer L, then experiment A is hit.
+  f(cookie,layer L) % 100 = m if m falls into the scope of experiment A in layer L, then experiment A is hit.
 
 ## Disjoint of experiment
-experiments in each layer are disjoint of each other  
+To make sure experiments in different layer do not affect each other, experiments in each layer are disjoint of each other  
 ```
 layer A : a:20%  ,  b:20%  , c:60%  
 layer B : aa:10% ,  bb:10% , cc:80%  
