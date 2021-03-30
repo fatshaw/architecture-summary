@@ -58,5 +58,6 @@
 
 ## Reference
 
-- https://inside.getyourguide.com/blog/2019/11/18/tackling-business-complexity-with-strategic-domain-driven-design#:~:text=Pattern%3A%20Customer%2DSupplier,the%20downstream%20is%20the%20customer.&text=The%20trade%2Doff%20of%20this%20pattern%20is%20its%20nature%20itself.
-- https://contextmapper.org/
+- [Tackling business complexity with strategic domain-driven design](https://inside.getyourguide.com/blog/2019/11/18/tackling-business-complexity-with-strategic-domain-driven-design#:~:text=Pattern%3A%20Customer%2DSupplier,the%20downstream%20is%20the%20customer.&text=The%20trade%2Doff%20of%20this%20pattern%20is%20its%20nature%20itself).
+- [contextmapper](https://contextmapper.org/)
+- [ddd-integrity](https://rafaelritter.medium.com/ddd-model-integrity-patterns-36d0e8ac9561)
