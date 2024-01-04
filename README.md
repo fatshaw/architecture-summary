@@ -2,12 +2,12 @@
 
 **Record architecture design and thought during the work and study**
 
-- **backend-spec** backend development and release specification
+- [backend-spec](./backend%20spec): backend development and release specification
 
-- **business system** business system design about widely used application, such as auth-server, RBAC, RMS(resource management system), etc.
+- [business system](./business%20system/): business system design about widely used application, such as auth-server, RBAC, RMS(resource management system), etc.
 
-- **microservices pattern** patterns designed to solve problems in mircoservices architecture, such as distributed transaction, authorization and authentification, etc.
+- [pattern](./patterns): patterns designed to solve common problems.
 
-- **system design** focus on modelling the world . 
+- [system design](./system%20design/): focus on modelling the world . 
 
-- **refactoring** notes about refactoring
+- [refactoring](./refactoring/): notes about refactoring
